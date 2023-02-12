@@ -1,0 +1,25 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Product Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">The Ragin' Jage Coffee Shop</h1>
+    <h2>Our Coffee Products</h2>
+</div>
+
+@{
+
+    foreach (Product c in Model)
+    {
+        <a class="nav-link text-dark" asp-action="ProductDetails" asp-route-id="@c.Id">
+        <div class="card">
+            <h1>@c.Name</h1>
+            <p>$@c.Price</p>
+        </div>
+            </a>
+        <br />
+    }
+}
+
+

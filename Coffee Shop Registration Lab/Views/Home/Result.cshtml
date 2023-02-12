@@ -6,4 +6,16 @@
 }
 <h1>Welcome @Model.fName @Model.lName.</h1>
 <p>You are registered with the email @Model.email.</p>
-<p>Enjoy your free cup of coffee on us the next time you stop in!</p>
+<p>Enjoy a free @Model.Drink on us!</p>
+
+@{
+    if (Model.lactose)
+    {
+        <p>We will prepare your drinks with Oat Milk!</p>
+    }
+
+    <p>Click on the followering links for our products:</p>
+     <p><a asp-controller="Product" asp-action="BlackProducts">Black Coffee Variations</a></p>
+     <p><a asp-controller="Product" asp-action="MilkProducts">Milk-Added Options</a></p>
+    <p><a asp-controller="Product" asp-action="ProductView">Our Entire Product Selection</a></p>
+}

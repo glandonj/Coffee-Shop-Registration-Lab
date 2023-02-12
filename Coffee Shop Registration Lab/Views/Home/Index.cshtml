@@ -1,12 +1,29 @@
-﻿@{
+﻿@model List<Product>
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">The Ragin' Jage Coffee Shop</h1>
 </div>
 <a asp-controller="Home" asp-action="Form">
     Please register with us!
 </a>
-<p>As a token of our appreciation, you get a free cup of hot house java just for registering.</p>
+<p> As a token of our appreciation, you get a free cup of java just for registering.</p>
+
+<p>Click on the followering links for our products:</p>
+<p><a asp-controller="Product" asp-action="BlackProducts">Black Coffee Variations</a></p>
+<p><a asp-controller="Product" asp-action="MilkProducts">Milk-Added Options</a></p>
+<p><a asp-controller="Product" asp-action="ProductView">Our Entire Product Selection</a></p>
+
+@{
+    @*foreach (Product c in Model)
+        {
+            <div class="card">
+                <h1>@c.Name</h1>
+                <p>@c.Description</p>
+                <p>$@c.Price</p>
+            </div>
+            <br />
+        }*@
+}

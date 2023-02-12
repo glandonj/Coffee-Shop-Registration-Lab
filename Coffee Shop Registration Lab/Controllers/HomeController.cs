@@ -7,6 +7,7 @@ namespace Coffee_Shop_Registration_Lab.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private CoffeeDbContext dbContext = new CoffeeDbContext();
 
     public HomeController(ILogger<HomeController> logger)
     {
@@ -15,7 +16,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        List<Product> result = dbContext.Products.ToList();
+        return View(result);
     }
 
     public IActionResult Privacy()

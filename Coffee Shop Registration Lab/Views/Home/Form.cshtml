@@ -4,14 +4,32 @@
 @{
 }
 <form asp-method="post" asp-action="result">
-        <p>Enter first name: </p>
+    <p>Enter first name: </p>
     <input type="text" name="fName" />
-        <p>Enter last name: </p>
+
+    <p>Enter last name: </p>
     <input type="text" name="lName" />
-        <p>Enter email: </p>
-    <input type="email" name="email"/>
-        <p>Enter password: </p>
+
+    <p>Enter email: </p>
+    <input type="email" name="email" />
+
+    <p>Enter password: </p>
     <input type="password" name="password" />
 
-    <input type="submit" />
+    <p>Are you lactose intolerant?</p>
+    <input type="checkbox" name="lactose" value="true" />
+
+    <p>What is your favorite drink?</p>
+    <select name="Drink">
+        <option value="Drip Coffee">Drip Coffee</option>
+        <option value="Pour Over Coffee">Pour Over Coffee</option>
+        <option value="Americano">Americano</option>
+        <option value="Expresso">Expresso</option>
+        <option value="Cappuccino">Cappuccino</option>
+        <option value="Steamer">Steamer</option>
+        <option value="Cold Brew">Cold Brew</option>
+    </select>
+
+    <input type="submit" class="btn btn-primary"/>
 </form>
+

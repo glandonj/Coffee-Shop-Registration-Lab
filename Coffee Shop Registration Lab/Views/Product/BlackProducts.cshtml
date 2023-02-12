@@ -1,0 +1,24 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Black Products";
+}
+
+<div class="text-center">
+    <h1 class="display-4">The Ragin' Jage Coffee Shop</h1>
+    <h2>Our Black Coffee Collection</h2>
+</div>
+
+@{
+
+    foreach (Product c in Model.Where(o => o.Category == "Black"))
+    {
+        <a class="nav-link text-dark" asp-action="ProductDetails" asp-route-id="@c.Id">
+            <div class="card">
+                <h1>@c.Name</h1>
+                <p>$@c.Price</p>
+            </div>
+        </a>
+        <br />
+    }
+}
+
